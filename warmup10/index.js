@@ -4,12 +4,9 @@
 
 console.log("hello")
 
-
-
-$('#btn').on('click', function(){
-	if($('ul')[0].childNodes.length % 2 === 0){
-		$('ul').append('<li class ="firstColor"> ' + $('input').val() + '</li>');
-	}else {
-		$('ul').append('<li class ="secondColor"> ' + $('input').val() + '</li>');
-	}
+$('#btn').click(function(){
+	$('ul').append('<li> ' + $('input').val() + '</li>');
+	$('li:even').addClass('firstColor')
+	$('li:odd').addClass('secondColor')
+	console.log($('li'))
 })

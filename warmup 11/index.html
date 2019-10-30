@@ -8,17 +8,33 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="left"> left</button>
-    <button id="right">right </button><br>
+    <div class="container">
 
-    <button id="create">create</button>
-    <div>
-            Left UL  <ul id="leftUl"> </ul>
-            Right UL <ul id="rightUl"></ul>
+            <div class="btn">
+                    <button id="left"> left</button>
+                    <button id="right"> right </button><br>
+                    
+            </div>
+            <div class="btn">
+                    <button id="btn-create">create</button>
+            </div>
+            
+            <div class="result">
+                    <div class ="leftResult">
+                        <label>Left UL </label>
+                         <ul id="ul-left">  </ul>
+                    </div>
+                    <div class="rightResult">
+                        <label>Right UL</label>
+                         <ul id="ul-right">  </ul>
+                    </div>
+                    
+            </div>
     </div>
-    <div class="ulDIv"></div>
+   
+
     
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
