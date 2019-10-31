@@ -6,7 +6,8 @@ Input
         An integer value representing the size of the range
 
 Output
-    Your function should return the starting (minimum) and ending (maximum) numbers of the range in the form of an array/list comprised of two integers.
+    Your function should return the starting (minimum) and ending (maximum) numbers of
+     the range in the form of an array/list comprised of two integers.
     Test Example
 
     let inputString = '1568141291110137';
@@ -22,3 +23,38 @@ Technical Details
     -The maximum size of a range will be 100 integers
     -The starting number of a range will be: 0 < n < 100
  */
+
+ function mysteryRange(str,n){
+     console.log(str.length)
+     var tab = str.split('')
+     var result = []
+     var withoutZeo = []
+     for (var  i = 0 ; i < tab.length ; i++ ){
+         if(tab[i] !== '0'){
+             withoutZeo.push(tab[i])
+         }
+     }
+     var  min = Math.min(...withoutZeo)
+     var  max = Math.max(...tab)
+     var ch =  ""
+     var x = n.toString()
+     //console.log(tab)
+     var sum = 0
+     for(var i= 0; i < tab.length ; i++ ){
+        ch += tab[i]
+        sum += Number.parseInt(ch)
+        var val = Number.parseInt(ch)
+        console.log(val)
+
+        var l = ch.length
+        var x = n.toString()
+        if((val >= min) && (x.length === l) ){
+            result.push(val)
+            ch =""
+        }
+  
+     }
+     console.log(result)
+     console.log(tab)
+     return "["+ Math.min(...result)+ ", " + Math.min(...result)+"]"
+ }
