@@ -37,16 +37,44 @@ You don't need to validate the form of the Roman numeral.
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
-function Roman(n){
-  /*  var ch = toString(n)
-   var l = ch.length;
-
-   var tabNum = [1000,100,10,1]
-   var sp = ch.split('')
-
-   for (var i = 0 ; i< l ; i++){
-        if (parseInt(sp[i]))
-   } */
+// Refactoreted function 
+function romain(str){
+    var result = 0
+    var arr1 = str.split('')
+    var objRomKey = { 
+      I : 1,
+      V : 5,
+      X : 10,
+      L : 50,
+      C : 100,
+      D : 500,
+      M : 1000 }
+    
+    var exception=["IV","IX","XL","XC","CD","CM"]
+    var exceptionObj = {
+      IV : 4,
+      IX : 9,
+      XL : 40,
+      XC : 90,
+      CD : 400,
+      CM : 900
+    }
+    for( var i=0 ; i < arr1.length ; i++ ){
+        var ch = arr1[i]+arr1[i+1]
+        console.log(ch)
+      if( exception.indexOf(ch) === -1){
+        console.log("not exisit in exception  ++ ", objRomKey[arr1[i]] )
+        result += objRomKey[arr1[i]] 
+    
+      }else{
+          console.log("else  ++ " + exceptionObj[ch])
+          result += exceptionObj[ch]
+         i++
+        }
+        
+    }
+  
+    return result
 }
 
 function camelCase(input){
