@@ -1,6 +1,9 @@
-/* 1. Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
+/* 1. Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. 
+You don't need to validate the form of the Roman numeral.
 
-        Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
+        Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, 
+        starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC)
+         and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
 
         Example:
 
@@ -17,7 +20,9 @@
             D          500
             M          1,000 
     
-    2. Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+    2. Complete the method/function so that it converts dash/underscore delimited words into camel casing.
+     The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, 
+        also often referred to as Pascal case).
         Examples:
 
         toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
@@ -31,3 +36,39 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+function Roman(n){
+  /*  var ch = toString(n)
+   var l = ch.length;
+
+   var tabNum = [1000,100,10,1]
+   var sp = ch.split('')
+
+   for (var i = 0 ; i< l ; i++){
+        if (parseInt(sp[i]))
+   } */
+}
+
+function camelCase(input){
+    var result = ""
+    for (var i=0 ; i < input.length ; i++ ){
+        if(input[i] === "-" || input[i] === "-"){
+            result += input[i+1].toUpperCase()
+            i++
+        }else {
+            result += input[i]
+        }
+    }
+return result
+        
+}
+
+function filter_list(tab){
+    var result = []
+    for (var i = 0 ; i< tab.length ; i++ ){
+        if (Number.isInteger(tab[i]) && result.indexOf(tab[i])=== -1){
+            result.push(tab[i])
+        }
+    }
+    return result 
+}
