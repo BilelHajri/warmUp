@@ -27,19 +27,27 @@ function check(str){
 		o:0,
 		n:0
 	}
-	var nb = 0
-	//var ch = ""
-	
+	// to check how manay charc in inside the input match with balloon
 	for (var i= 0; i < str.length; i++){
 		for(key in obj){
-			//console.log(obj[key])
+
 			if(str[i] === key){
 				obj[key] +=1
 				nb +=1
 			}
 		}
 	}
-	// console.log(nb/7)
-	//7 is the total number of str
-	return nb/7
+	// to calc the output 
+	// the output will be ch.length / 7 (number of charc inside "balloon")
+	var ch =""
+	for (key in obj){
+		while(obj[key] !== 0){
+			obj[key] -= 1
+			ch += key
+		}
+	}
+	if(ch.length % 7 === 0){ 
+		return ch.length /7 
+	}
+	return 0
 }
