@@ -1,0 +1,36 @@
+.container{
+    width: 80% ;
+    margin:auto;
+    padding: 5%;
+}
+.btn{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+#left{
+    position: relative;
+    width: 30%;
+    margin-right: 20px;
+}
+#right{
+    position: relative;
+    width: 30%;
+    margin-left: 20px;
+}
+#btn-create{
+    margin: 20px;
+    width:80%;
+    background:beige;
+    border: blue solid 0.5px;
+
+}
+.result {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
